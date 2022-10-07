@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+<style>
+       * {
+          box-sizing: border-box;
+        }
+        body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+    #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}
+    button{
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+color: rgba(160, 144, 178, 0.827);
+  font-size: 40px;
+  cursor: pointer;
+  margin: 20px 30px;
+  background: rgba(18, 17, 124, 0.248);
+  font-family: 'Gemunu Libre', sans-serif;
+}
+span{
+  display: block;
+  padding: 25px 80px;
+}
+button::before, button::after{
+  content:"";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+span::before, span::after{
+  content:"";
+  width:2px;
+  height:0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+button:hover::before, button:hover::after{
+  width: 100%;
+}
+button:hover span::before, button:hover span::after{
+  height: 100%;
+}
+h1 {
+  text-shadow: 6px 6px 12px red;
+  font-size: 100px;
+  font-family: 'Nabla', cursive;
+}
+.btn-6::before{
+  left: 50%;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.btn-6::after{
+  left: 50%;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+.btn-6 span::before{
+  left: 0;
+  top: 50%;
+  transition-duration: 0.4s;
+}
+.btn-6 span::after{
+  right: 0;
+  top: 50%;
+  transition-duration: 0.4s;
+}
+.btn-6:hover::before, .btn-6:hover::after{
+  left: 0;
+}
+.btn-6:hover span::before, .btn-6:hover span::after{
+  top: 0;
+}
+</style>
+</head>
+<body>
+
+<center><h1>Space Wars</h1></center>
+<video autoplay muted loop id="myVideo">
+    <source src="./images and vedios/Main.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  
+<center><button onclick="window.location.href = './images and vedios/Level 1.html';"class="btn-6" ><span><b>Play</b></span></button></center>
+
+</body>
+</html>
+

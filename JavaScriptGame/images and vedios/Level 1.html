@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+    <style>
+      * {
+          box-sizing: border-box;
+        }
+        body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+    #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}
+button{
+z-index: 1;
+	}
+  image{
+    z-index: 2;
+  }
+  h1{
+    font-family: 'Nabla', cursive;
+    
+}
+button{
+  font-size: 30px;
+  background-color: rgba(0, 0, 255, 0.448);
+
+	}
+  #seconds, #tens{
+  font-size:2em;
+  font: 900px;
+  font-display: white;
+color: antiquewhite;
+  }
+ 
+    
+      </style>
+    <script type="text/javascript">
+       x=0;
+  var p=setInterval(f1,1000);
+  function f1()
+{
+x=Math.floor(Math.random()*500);
+var y=Math.floor(Math.random()*1200);
+document.getElementById("im").style.marginTop=x;
+document.getElementById("im").style.marginLeft=y;
+}
+/*x=0;
+var p=setInterval(f1,100);
+function f1()
+{
+if(x<=200)
+x=x+20;
+else
+x=0;
+document.getElementById("im").style.margin=x;
+
+}*/
+      window.onload = function () {
+       
+  
+  var seconds = 00; 
+  var tens = 00; 
+  var appendTens = document.getElementById("tens")
+  var appendSeconds = document.getElementById("seconds")
+  var buttonStart = document.getElementById('button-start');
+  var buttonStop = document.getElementById('im');
+
+  var Interval ;
+ 
+
+  buttonStart.onclick = function() {
+    
+    clearInterval(Interval);
+     Interval = setInterval(startTimer, 10);
+  }
+  
+    buttonStop.onclick = function() {
+       clearInterval(Interval);
+       alert("You Won Now Go to level 2"); 
+    window.location.href = "Level 2.html";
+  }
+   function startTimer () {
+    tens++; 
+    
+    if(tens <= 9){
+      appendTens.innerHTML = "0" + tens;
+    }
+    
+    if (tens > 9){
+      appendTens.innerHTML = tens;
+      
+    } 
+    
+    if (tens > 99) {
+      console.log("seconds");
+      seconds++;
+      appendSeconds.innerHTML = "0" + seconds;
+      tens = 0;
+      appendTens.innerHTML = "0" + 0;
+    }
+    
+    if (seconds > 9){
+      appendSeconds.innerHTML = seconds;
+    }
+  
+  }
+  
+
+}
+      </script>
+    </head>
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="./Level1background_Trim.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <center><h1>Level 1</h1></center>
+    <center><button class="btn"id="button-start">Start</button></center>
+       
+    <center><p><span id="seconds">00</span>:<span id="tens">00</span></p></center>
+    
+    <img class="image" src="./Level1Monster.png" height="50" width="50" id="im" >
+   <div class="container">
+      
+   
+     
+     
+    
+      </div> 
+      
+      
+    </body>
+  </html>
